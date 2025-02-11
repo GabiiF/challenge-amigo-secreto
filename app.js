@@ -18,6 +18,8 @@ function agregarAmigo() {
         // almaceno los nombres
         amigos.push(nombre);
         console.log("lista: ", amigos);
+        //agrego a la lista li
+        actualizarListaAmigos(amigos);
         // limpiar
         limpiarInput();
     }
@@ -27,4 +29,13 @@ function agregarAmigo() {
 function limpiarInput() {
     // El query selector por Id
     document.querySelector("#amigo").value = "";
+}
+function actualizarListaAmigos(amigos) {
+    let elementoHTML = document.getElementById("listaAmigos");
+    //para asegurarse de que no haya duplicados al actualizar.
+    elementoHTML.innerHTML ="";
+    //Iterar sobre el arreglo
+    for (const amigo in amigos) {
+        elementoHTML.innerHTML += `<li>${amigos[amigo]}</li>`;
+    }
 }
