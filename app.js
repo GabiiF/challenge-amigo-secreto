@@ -9,7 +9,6 @@ let amigos = [];
 }*/
 function agregarAmigo() {
     // captura el valor de entrada
-    console.log("lista: ", amigos);
     let nombre = document.getElementById("amigo").value;
     // validar la entrada
     if (nombre === "" || nombre === " "){
@@ -17,7 +16,6 @@ function agregarAmigo() {
     }else{
         // almaceno los nombres
         amigos.push(nombre);
-        console.log("lista: ", amigos);
         //agrego a la lista li
         actualizarListaAmigos(amigos);
         // limpiar
@@ -38,4 +36,21 @@ function actualizarListaAmigos(amigos) {
     for (const amigo in amigos) {
         elementoHTML.innerHTML += `<li>${amigos[amigo]}</li>`;
     }
+}
+function sortearAmigo() {
+    //Validamos que haya amigos disponibles
+    if(amigos.length ===0 ){
+        alert("Debe agregar amigos para sortear");
+        
+    }else{
+        //sorteamos
+        let indice = generarIndiceAleatorio();
+        let elementoHTML = document.getElementById("resultado");
+        elementoHTML.innerHTML ="";
+        elementoHTML.innerHTML += `<li>${amigos[indice]}</li>`;
+    }
+}
+function generarIndiceAleatorio() {
+    // la lista se genera de 0 a length x eso saco el +1
+    return Math.floor(Math.random()* amigos.length);
 }
