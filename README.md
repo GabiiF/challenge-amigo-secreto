@@ -20,7 +20,6 @@ El usuario deberá agregar nombres mediante un campo de texto y un botón "Adici
 Para la realización de este proyecto he utilizando:
 <p>
 <img width="90" heigth="30" src="assets/html.png" alt="HTML" >
-<img width="65" heigth="30" src="assets/css_icon.png" alt="Css">-
 <img width="75" heigth="30" src="assets/js_icon.png" alt="Js">
 </p>
 
